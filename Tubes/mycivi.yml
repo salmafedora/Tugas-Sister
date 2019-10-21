@@ -65,6 +65,81 @@ paths:
             schema:
               $ref: '#/components/schemas/LoginUser'
         required: true
+
+  /user/{username}:
+    post:
+      tags:
+        - user
+      summary: add public user data
+      operationId: user.input
+      description: Adds public user data to the system
+      parameters:
+        - in: path
+          name: username
+          description: identitas user
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '500':
+          description: 500 Internal server error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 500 Internal server error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublicUserData'
+        required: true
+        description: Public user data to add
+    put:
+      tags:
+        - user
+      summary: edit public user data
+      operationId: user.update
+      description: Edits public user data from the system
+      parameters:
+        - in: path
+          name: username
+          description: identitas user
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '500':
+          description: 500 Internal server error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 500 Internal server error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublicUserData'
+        required: true
+        description: Public user data to edit
+
   /user/list:
     get:
       summary: Melihat semua data user yang ada
