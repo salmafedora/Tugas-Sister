@@ -34,5 +34,5 @@ def enter(username):
     else:
         abort(
             406,
-            "Person with last name {username} already logged in".format(username=username),
+            "Person with username {username} already logged in".format(username=username),
         )
