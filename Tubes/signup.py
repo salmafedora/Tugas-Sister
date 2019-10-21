@@ -4,7 +4,7 @@ from flask import make_response, abort
 # Data to serve with our API
 
 
-USERPRIVATE = {
+USER_ALL = {
     "leo": {
         "username": "leo",
         "email": "leo.draconus@gmail.com",
@@ -37,8 +37,8 @@ def create(username):
     prestasi = person.get("prestasi", None)
 
     # Does the person exist already?
-    if username not in USER and username is not None:
-        USERPRIVATE[username] = {
+    if username not in USER_ALL and username is not None:
+        USER_ALL[username] = {
             "username": username,
             "email": email,
             "password": password,
