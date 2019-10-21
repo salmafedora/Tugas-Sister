@@ -1,0 +1,171 @@
+openapi: 3.0.0
+
+info:
+  description: MyCivi API Implementation
+  version: 1.0.0
+  title: MyCivi
+tags:
+  - name: user
+    description: Operations about user
+paths:
+  /user/list:
+    get:
+      summary: Melihat semua data user yang ada
+      operationId: userlist.read
+      description: |
+        Melihat semua data user
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/PublicUserData'
+        '401':
+          description: 401 Access unauthorized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 401 Access unauthorized
+        '403':
+          description: 403 Access forbidden
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 403 Access forbidden
+        '404':
+          description: 403 Not Found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 403 Not Found
+        '500':
+          description: 500 Internal server error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 500 Internal server error
+  /user/list/{username}:
+    get:
+      summary: Melihat data user berdasarkan username
+      operationId: userlistusername.read
+      description: |
+        Melihat data user berdasarkan username
+      parameters:
+        - in: path
+          name: username
+          description: identitas user
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/PublicUserData'
+        '401':
+          description: 401 Access unauthorized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 401 Access unauthorized
+        '403':
+          description: 403 Access forbidden
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 403 Access forbidden
+        '404':
+          description: 403 Not Found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 403 Not Found
+        '500':
+          description: 500 Internal server error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 500 Internal server error
+components:
+  schemas:
+    UserData:
+      type: object
+      required:
+        - username
+        - email
+        - password
+      properties:
+        username:
+          type: string
+          example: leo
+        email:
+          type: string
+          example: leo.draconus@gmail.com
+        password:
+          type: string
+          format: password
+          example: qwerty
+        publicdata:
+          $ref: '#/components/schemas/PublicUserData'
+
+    LoginUser:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          example: leo
+        password:
+          type: string
+          format: password
+          example: qwerty
+
+    PublicUserData:
+      type: object
+      required:
+        - nama
+        - bidang
+        - prestasi
+      properties:
+        nama:
+          type: string
+          example: Leo Draconus
+        bidang:
+          type: string
+          example: musik
+        prestasi:
+          type: string
+          example: juara 2 lomba gitar akustik
