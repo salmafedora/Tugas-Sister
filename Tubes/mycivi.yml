@@ -10,6 +10,61 @@ tags:
   - name: user
     description: Operations about user
 paths:
+  /welcome/signup:
+    post:
+      tags:
+        - user
+      summary: adds a user
+      operationId: signup.create
+      description: Adds a user to the system
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '500':
+          description: 500 Internal server error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 500 Internal server error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserData'
+        required: true
+        description: User to add
+  /welcome/login:
+    post:
+      tags:
+        - user
+      summary: post a user that already signed up
+      operationId: login.enter
+      description: login user
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '500':
+          description: 500 Internal server error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 500 Internal server error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginUser'
+        required: true
   /user/list:
     get:
       summary: Melihat semua data user yang ada
