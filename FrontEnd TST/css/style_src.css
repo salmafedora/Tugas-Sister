@@ -21,6 +21,7 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   background: none;
+  line-height: 50px;
 }
 
 
@@ -125,7 +126,7 @@ body {
 }
 .search-box{
   position: absolute;
-  top: 4%;
+  top: 40px;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;

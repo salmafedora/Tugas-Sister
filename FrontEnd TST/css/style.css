@@ -20,6 +20,7 @@ body {
   margin-left: 100px;
   margin-top: 15px;
   margin-bottom: 15px;
+  line-height: 50px;
 }
 
 
@@ -170,7 +171,7 @@ body {
 }
 .search-box{
   position: absolute;
-  top: 4%;
+  top: 40px;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
