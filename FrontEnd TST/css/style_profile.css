@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #EFF2FE;
+  font-family: SourceSansPro;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #4C45B2;
+}
+
+.topnav h2{
+  font-size: 24px;
+  color: white;
+  margin-left: 100px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 50px;
+}
+
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 60%;
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 50px;
+  bottom: 30%;
+  background-color: #fff;
+  overflow-x: hidden;
+  float: left;
+  position: absolute;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  transition: 0.4s;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #D9E2FF;
+  color: black;
+}
+
+.sidenav h2{
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top:20px;
+  margin-bottom: 5px;
+
+}
+
+.sidenav p{
+  font-size: 14px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+
+}
+
+
+/* Style the content */
+.content {
+  margin-top: 40px;
+  margin-left: 300px;
+  margin-right: 70px;
+  padding: 20px;
+  top: 10%;
+  background-color: white;
+}
+
+.content h2{
+  padding: 5px;
+  margin: 5px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.content p{
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.class-table{
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.col{
+  flex: 25%;
+  padding: 10px;
+  max-width:1000px;
+  box-sizing: border-box;
+}
+
+.table{
+  background: #fff;
+  padding: 40px 40px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+  border: 1px solid #707070;
+  border-radius:10px;
+}
+
+.table h2{
+  font-family: SourceSansPro;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+
+.table ul{
+  margin: 0;
+  padding: 0;
+}
+
+.table ul li{
+  padding: 10px 0;
+  list-style: none;
+}
+
+.btn_view{
+  text-decoration: none;
+  color: #0078FF;
+  border: 1px solid #0078FF;
+  padding: 5px 20px;
+  border-radius: 40px;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: 0.5s linear;
+  float:right;
+  background: #fff;
+}
+
+.btn_view:hover{
+  background: #0078FF;
+  color: white;
+}
+
+.btn_discard{
+  text-decoration: none;
+  color: black;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: 0.5s linear;
+  float:right;
+  background: #fff;
+  border: none;
+
+}
+
+.btn_discard:hover{
+  color: red;
+}
+
+.search-box{
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  height: 40px;
+  border-radius: 30px;
+  padding: 5px;
+  z-index: 3;
+}
+
+.search-box:hover > .search-txt{
+  width: 200px;
+  padding: 0 6px;
+  transition: 0.4s;
+
+}
+
+.search-box:hover > .search-btn{
+
+}
+
+
+.search-btn{
+  color: black;
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-txt{
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: black;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 30px;
+  width: 0px;
+
+}
+
+.del{
+  float: right;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.inedit {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid grey;
+  font-size: 18px;
+  color: black;
+  font-size: 16px;
+
+}
+
+.add {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid grey;
+  font-size: 18px;
+  color: black;
+  font-size: 16px;
+  height: 300px;
+  border-radius: 10px;
+
+
+}
+
+.add2 {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid grey;
+  font-size: 18px;
+  color: black;
+  font-size: 16px;
+  height: 100px;
+  border-radius: 10px;
+
+
+}
