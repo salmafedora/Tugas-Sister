@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>MyCivi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body></body>
+    <div class="main-content">
+        <header>
+            <h1>MyCivi</h1>
+        
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Help</a>
+        </header>
+
+        <p>Masukkan nama pada kolom pencarian untuk mencari data</p>
+
+        <form>
+            <input placeholder="Nama">
+            <button>Search</button>
+        </form>
+        
+        <table class="table" style="margin-top:1em">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Bidang</th>
+                    <th scope="col">Prestasi</th>
+                    </tr>
+            </thead>
+            <tbody id="result">
+                <script id="template" type="html">
+                    {{#users}}
+                    {{#.}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{email}}</td>
+                        <td>{{gender}}</td>
+                        <td>{{field}}</td>
+                        <td>{{achievement}}</td>
+                    </tr>
+                    {{/.}}
+                    {{/users}}
+                </script>
+            </tbody>
+        </table>
+                
+    </div>
+
+    <footer>
+        <p>Tugas TST 2019</p>
+        <p>18216033 Aditya Dhammawan Tang</p>
+        <p>18217007 Salma Fedora</p>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
+</body>
+
+</html>
